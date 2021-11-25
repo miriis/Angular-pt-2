@@ -1,0 +1,16 @@
+.user {
+  width: 17vw;
+  height: 60vh;
+  background-color: rgb(226, 226, 155);
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}

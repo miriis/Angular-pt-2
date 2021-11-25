@@ -1,0 +1,10 @@
+<div class='user'>
+  <p>user-container component</p>
+  <div class='try'>
+  <app-user-list (showDetails)="showDetails($event)" *ngIf="hide; else details"></app-user-list>
+  </div>
+  </div>
+
+  <ng-template #details>
+    <app-user-detail [userDetail]="userDetail" (closeDetails)="closeDetails($event)"></app-user-detail>
+  </ng-template>

@@ -1,0 +1,7 @@
+.ord {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 35vw;
+  align-items: center;
+}

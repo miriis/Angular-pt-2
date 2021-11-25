@@ -1,0 +1,9 @@
+.user {
+  height: 5vh;
+  width: 15vw;
+  background-color: rgb(226, 201, 155);
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding: 0 10px;
+}

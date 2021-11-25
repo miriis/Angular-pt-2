@@ -1,0 +1,11 @@
+.general {
+  background-color: rgb(190, 190, 236);
+  width: 30vw;
+}
+
+.order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px;
+}

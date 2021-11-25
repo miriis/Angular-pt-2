@@ -1,0 +1,14 @@
+.user {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(170, 170, 223);
+  text-align: center;
+}
+
+.try {
+  height: 60vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  margin-left: 550px;
+}

@@ -12,6 +12,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserSingleComponent } from './components/user-single/user-single.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AppRountingModule } from './app-routing.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AppRountingModule } from './app-routing.module';
     UserListComponent,
     UserSingleComponent,
     NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

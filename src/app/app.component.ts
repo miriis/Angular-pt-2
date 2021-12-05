@@ -7,7 +7,7 @@ import { CounterService } from './shared/counter.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Ex 9.1';
+  title = 'Ex 9.2';
 
   constructor(private counterService: CounterService) {}
 

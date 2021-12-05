@@ -5,24 +5,29 @@ import { Injectable } from '@angular/core';
 })
 export class CounterService {
   private counter : number = 0;
+  private error = '';
 
   constructor() { }
 
   getValue(){
-    if(this.counter >= 0){
-      console.log(this.counter);
-    } else{
-      console.log ('Error, counter cannot be negative');
-    }
+    return this.counter;
   }
 
-  addValue(value:number = 1):any {
-    this.counter += value;
-    console.log("Value:",this.counter)
+  addValue(value: any) {
+    let number = parseInt(value);
+    this.counter += number;
+    console.log("Value:", this.counter);
   }
 
-  subValue(value:number = 1):any {
-    this.counter -= value;
-    console.log("Value:",this.counter)
+  subValue(value: any):any {
+    if (value <= this.counter) {
+      this.counter = +this.counter - +value;
+    } else {
+    this.error = 'Error: value cannot be negative';
+  }
+  }
+
+  getErr(): string {
+    return this.error;
   }
 }

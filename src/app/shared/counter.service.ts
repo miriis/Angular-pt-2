@@ -1,30 +1,41 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CounterService {
-  private counter : number = 0;
+  public counterSub = new BehaviorSubject(0);
+  public counter!: number;
   private error = '';
 
-  constructor() { }
-
-  getValue(){
-    return this.counter;
+  constructor() {
+    this.getValue().subscribe((v) =>  this.counter = v);
+    console.log( 'Value: ', this.counter);
   }
 
-  addValue(value: any) {
+  getValue(): Observable<number> {
+    return this.counterSub.asObservable();
+  }
+
+  /* addValue(value : number) {
+    this.getValue().subscribe(() =>  this.counter = this.counter += value);
+    console.log("Value: ", this.counter);
+  } */
+
+  addValue(value : any) {
     let number = parseInt(value);
-    this.counter += number;
-    console.log("Value:", this.counter);
+    this.getValue().subscribe(() =>  this.counter = this.counter += number);
+    console.log("Value: ", this.counter);
   }
 
-  subValue(value: any):any {
+  subValue(value : number) {
     if (value <= this.counter) {
-      this.counter = +this.counter - +value;
+      this.getValue().subscribe(() => this.counter = this.counter -= value);
+      console.log("Value: ", this.counter);
     } else {
-    this.error = 'Error: value cannot be negative';
-  }
+      this.error= 'Error: value cannot be negative';
+    }
   }
 
   getErr(): string {

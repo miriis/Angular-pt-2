@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CounterService } from 'src/app/shared/counter.service';
 
 @Component({
@@ -6,7 +7,8 @@ import { CounterService } from 'src/app/shared/counter.service';
   templateUrl: './edit-counter.component.html',
   styleUrls: ['./edit-counter.component.css']
 })
-export class EditCounterComponent implements OnInit {
+export class EditCounterComponent implements OnInit, OnDestroy {
+  subscription!: Subscription;
   userNumber!: number;
 
   constructor(public counterService: CounterService) { }
@@ -25,6 +27,10 @@ export class EditCounterComponent implements OnInit {
 
   sub() {
     this.counterService.subValue(this.userNumber);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

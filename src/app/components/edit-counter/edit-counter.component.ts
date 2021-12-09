@@ -7,30 +7,11 @@ import { CounterService } from 'src/app/shared/counter.service';
   templateUrl: './edit-counter.component.html',
   styleUrls: ['./edit-counter.component.css']
 })
-export class EditCounterComponent implements OnInit, OnDestroy {
-  subscription!: Subscription;
-  userNumber!: number;
+export class EditCounterComponent implements OnInit {
+  value: number = 1;
 
   constructor(public counterService: CounterService) { }
 
   ngOnInit(): void {
   }
-
-  numberValue(numberValue: any): number {
-    this.userNumber = numberValue.target.value;
-    return this.userNumber;
-  }
-
-  add() {
-    this.counterService.addValue(this.userNumber);
-  }
-
-  sub() {
-    this.counterService.subValue(this.userNumber);
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
 }

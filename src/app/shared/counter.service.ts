@@ -5,9 +5,9 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CounterService {
-  public counterSub = new BehaviorSubject(0);
+  public counterSubject = new BehaviorSubject<number>(0);
   public counter!: number;
-  private error = '';
+  public error = '';
 
   constructor() {
     this.getValue().subscribe((v) =>  this.counter = v);
@@ -15,7 +15,7 @@ export class CounterService {
   }
 
   getValue(): Observable<number> {
-    return this.counterSub.asObservable();
+    return this.counterSubject.asObservable();
   }
 
   /* addValue(value : number) {
@@ -23,15 +23,14 @@ export class CounterService {
     console.log("Value: ", this.counter);
   } */
 
-  addValue(value : any) {
-    let number = parseInt(value);
-    this.getValue().subscribe(() =>  this.counter = this.counter += number);
+  addValue(value : number = 1) {
+    this.counterSubject.next(this.counter += value);
     console.log("Value: ", this.counter);
   }
 
   subValue(value : number) {
     if (value <= this.counter) {
-      this.getValue().subscribe(() => this.counter = this.counter -= value);
+      this.counterSubject.next(this.counter -= value);
       console.log("Value: ", this.counter);
     } else {
       this.error= 'Error: value cannot be negative';

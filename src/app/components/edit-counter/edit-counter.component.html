@@ -1,6 +1,6 @@
 <div class="container">
-  <label>Choose a number</label>
-  <input type="number" (input)="numberValue($event)">
-  <button type="submit" (click)="add()">Add</button>
-  <button type="submit" (click)="sub()">Subtract</button>
+  <input type="number" [(ngModel)]='value'>
+  <br>
+  <button type="submit" (click)="counterService.addValue(value)">Add</button>
+  <button type="submit" (click)="counterService.subValue(value)">Subtract</button>
 </div>

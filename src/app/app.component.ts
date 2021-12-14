@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BeerService } from './beer.service';
+import { IProduct } from './shared/product';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-pt2';
+  title = 'Ex11.1';
+
+  products!: IProduct[];
+
+  constructor(private beerService: BeerService) { }
+
+  ngOnInit() { }
+
 }

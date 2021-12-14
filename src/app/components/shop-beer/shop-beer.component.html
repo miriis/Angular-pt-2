@@ -1,0 +1,25 @@
+<div class="container d-flex justify-content-center bg-light">
+<div class="form-group justify-content-around">
+  <label class="font-weight-bold mr-5" name="chooseBeer">Choose your beer:</label>
+  <select class="btn btn-info dropdown-toggle p-2 mr-2 mt-4" name="beerName" (change)="getBeerByName($event)"  required>
+    <option>Select Name</option>
+    <option *ngFor="let product of products">{{ product.name }}</option>
+  </select>
+</div>
+<div>
+  <select class="btn btn-info dropdown-toggle p-2 mt-4" name="beerType" (change)="getBeerByType($event)" required>
+    <option>Select Size</option>
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+  </select>
+<br>
+<br>
+  <button class="btn btn-danger d-flex justify-content-center" [disabled]="!beerName || !beerType" (click)="selectBeer()">Search</button>
+</div>
+</div>
+
+<app-card-beer class="d-flex justify-content-center" [products]="selectedBeer" *ngIf="selectedBeer; else noBeer"></app-card-beer>
+
+<ng-template #noBeer>
+  <p class="d-flex justify-content-center font-weight-bold">Sorry, this beer isn't available</p>
+</ng-template>

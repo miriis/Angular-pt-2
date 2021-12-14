@@ -1,63 +1,63 @@
-import { IProduct, Type } from "./product";
+import { IProduct } from "./product";
 
 export const PRODUCTS: IProduct[] = [
   {
     id: 1,
-    type: Type.small,
+    type: 'small',
     name: 'Peroni',
     price: 2
   },
   {
     id: 2,
-    type: Type.medium,
+    type: 'medium',
     name: 'Moretti',
     price: 4
   },
   {
     id: 3,
-    type: Type.small,
+    type: 'small',
     name: 'Nastro Azzurro',
     price: 1
   },
   {
     id: 4,
-    type: Type.medium,
+    type: 'medium',
     name: 'Ichnusa',
     price: 3
   },
   {
     id: 5,
-    type: Type.small,
+    type: 'small',
     name: 'Heineken',
     price: 2
   },
   {
     id: 6,
-    type: Type.medium,
+    type: 'medium',
     name: 'Carlsberg',
     price: 4
   },
   {
     id: 7,
-    type: Type.small,
+    type: 'small',
     name: 'Corona',
     price: 3
   },
   {
     id: 8,
-    type: Type.medium,
+    type: 'medium',
     name: 'Fischer',
     price: 5
   },
   {
     id: 9,
-    type: Type.small,
+    type: 'small',
     name: 'Messina',
     price: 1
   },
   {
     id: 10,
-    type: Type.medium,
+    type: 'medium',
     name: 'Tuborg',
     price: 3
   }

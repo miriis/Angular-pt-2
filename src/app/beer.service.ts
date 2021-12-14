@@ -10,6 +10,7 @@ import { find } from 'rxjs/operators';
 export class BeerService {
   private products: IProduct[] = PRODUCTS;
   private beers$: Observable<IProduct> = from(this.products);
+  public error = '';
 
   constructor() { }
 
@@ -24,6 +25,10 @@ export class BeerService {
       .subscribe((beer) => myBeer = beer);
     return myBeer;
     }
+
+  getErr(): string {
+    return (this.error='Error: this beer is not available');
+  }
 
   //all'inizio non riuscivo a stamparmi il result in console quindi smanettando un pò ero arrivata a questo sotto,
   //quindi te lo lascio però era merito di vsc :)

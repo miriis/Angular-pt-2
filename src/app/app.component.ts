@@ -12,10 +12,8 @@ export class AppComponent {
 
   products!: IProduct[];
 
-  constructor(public beerService: BeerService) { }
+  constructor(private beerService: BeerService) { }
 
-  ngOnInit() {
-    console.log(this.beerService.getBeerById(3));
-    }
+  ngOnInit() { }
 
 }

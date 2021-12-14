@@ -1,8 +1,8 @@
-export enum Type { small, medium };
+/* export enum Type { small, medium }; */
 
 export interface IProduct {
   id: number;
-  type: Type;
+  type: 'small'| 'medium';
   name: string;
   price: number;
 }

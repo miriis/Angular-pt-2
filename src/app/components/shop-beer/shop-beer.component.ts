@@ -10,8 +10,8 @@ import { IProduct } from 'src/app/shared/product';
 })
 export class ShopBeerComponent implements OnInit {
   products: IProduct[] = PRODUCTS;
-  beerName!: string;
-  beerType!: string;
+  beerName: any;
+  beerType: any;
   product: any;
   selectedBeer: IProduct | undefined;
 
@@ -19,12 +19,12 @@ export class ShopBeerComponent implements OnInit {
 
   ngOnInit(): void {this.getAllBeers()}
 
-  getBeerByName(event : any) {
+  getBeerByName(event: any) :any {
     this.beerName = event.target.value;
     return this.beerName;
   }
 
-  getBeerByType(event : any) {
+  getBeerByType(event: any) :any{
     this.beerType = event.target.value;
     return this.beerType;
   }

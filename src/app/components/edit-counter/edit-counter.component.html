@@ -1,0 +1,6 @@
+<div class="container">
+  <input type="number" [(ngModel)]='value'>
+  <br>
+  <button type="submit" (click)="counterService.addValue(value)">Add</button>
+  <button type="submit" (click)="counterService.subValue(value)">Subtract</button>
+</div>
